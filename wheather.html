@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Weather</title>
+      <script>
+            function weather() {
+                  var t;
+                  t = document.getElementById("weatherId").value;
+
+                  if (t >= 40) {
+                        document.getElementById("output").innerHTML = "Temprature :" + t + " is HOT ..";
+                        document.getElementById("body").style.backgroundImage = "url(imgs/hot.jpg)";
+                        document.getElementById("body").style.backgroundSize = ("cover");
+                  }
+
+                  else if (t >= 30 && t <= 40) {
+                        document.getElementById("output").innerText = "Temprature :" + t + " is MODERATE ..";
+                        document.getElementById("body").style.backgroundImage = "url(/imgs/moderate.jpg)";
+                        document.getElementById("body").style.backgroundSize = ("cover");
+                  }
+
+                  else if (t >= 20 && t <= 30) {
+                        document.getElementById("output").innerText = "Temprature :" + t + " is MILD ..";
+                        document.getElementById("body").style.backgroundImage = "url(/imgs/mild.jpg)";
+                        document.getElementById("body").style.backgroundSize = ("cover");
+                  }
+
+                  else {
+                        document.getElementById("output").innerText = "Temprature (0-20) is COLD ..";
+                        document.getElementById("body").style.backgroundImage = "url(/imgs/cold.jpg)";
+                        document.getElementById("body").style.backgroundSize = ("cover");
+                  }
+            }
+
+      </script>
+      <style>
+            /* body {
+                  height: 100vh;
+            } */
+
+            h1 {
+                  background-color: aqua;
+                  padding-top: 40px;
+                  margin-top: 20px;
+                  text-align: center;
+                  font-family: Arial, Helvetica, sans-serif;
+                  font-size: 80px;
+                  border: 2px solid red;
+                  border-radius: 10px;
+            }
+
+            h2 {
+                  text-align: center;
+                  color: goldenrod;
+                  font-family: 'Courier New', Courier, monospace;
+                  font-size: 40px;
+            }
+
+            #center {
+                  text-align: center;
+                  font-size: 40px;
+                  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            }
+
+            input[type="text"] {
+                  border-radius: 6px;
+                  height: 1.5rem;
+                  width: 3rem;
+            }
+
+            #center [value="Check!"] {
+                  font-size: 25px;
+                  font-family: 'Courier New', Courier, monospace;
+                  border-radius: 4px;
+                  position: relative;
+                  background-color: rgb(243, 161, 148);
+                  top: -15px;
+            }
+            #output{
+                  color:white;
+            }
+      </style>
+</head>
+
+<body id="body">
+      <h1>This Is A Weather Check Filed! </h1>
+      <h2>Lets Check ...</h2>
+      <p id="center">Check Weather : <input type="number" id="weatherId" onkeyup="weather()" onchange="weather()"></p>
+      <!-- <p id="center"><input type="button" value="Check!" onclick="weather()" </p> -->
+      <p id="center"><span id="output"></span></p>
+</body>
+
+</html>
